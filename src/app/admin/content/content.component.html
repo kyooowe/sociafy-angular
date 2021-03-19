@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{active: activeTab === 'Create Post'}"
+          (click)="getActiveTab('Create Post')">Create Post</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="{active: activeTab === 'Image'}" (click)="getActiveTab('Image')">Image</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade" [ngClass]="{'show active': activeTab === 'Create Post'}">
+        <textarea class="form-control" id="postContent" rows="2" (keyup)="autoGrowTextZone($event)"></textarea>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'show active': activeTab === 'Image'}">
+        <form action="/file-upload" class="dropzone" id="drop">
+          <div class="fallback">
+            <div class="imgContainer mt-1 mb-1" *ngFor="let imgUrl of url">
+              <img class="imgDiv" [src]="imgUrl" id="test">
+            </div>
+            <input type="file" class="form-control mt-1" (change)="onSelectFile($event)" multiple>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>

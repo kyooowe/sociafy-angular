@@ -1,0 +1,42 @@
+<div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status" *ngIf="isLoading">
+  <span class="sr-only"></span>
+</div>
+<div class="form-signin" [ngClass]="{'mute-all': isLoading}">
+ 
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="isLoginFailed">
+        Account not found! Please submit valid credentials.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <h2 class="text-center"><strong>Log In to Sociafy</strong></h2>
+      <br>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email"  name="email" formControlName="email">
+            <span class="help-block" *ngIf="!authForm.get('email').valid && authForm.get('email').touched">
+              Please enter a valid Email!
+            </span>
+          </div>
+        
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password"  name="password" formControlName="password">
+            <span class="help-block" *ngIf="!authForm.get('password').valid && authForm.get('password').touched">
+              Please enter a valid Password!
+            </span>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Remember Me
+              </label>
+            </div>
+          </div>
+        
+          <div>
+            <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">Log In</button> 
+        </div>
+    </form>
+</div>

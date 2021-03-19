@@ -1,0 +1,18 @@
+.card > .card-header > .nav-tabs > .nav-item > a {
+    cursor: pointer;
+    color: #a7a7a8;
+}
+
+.card > .card-header > .nav-tabs > .nav-item > .active {
+    cursor: pointer;
+    color: black;
+}
+
+.imgDiv {
+    height: 100%;
+    width: 100%;
+}
+
+.imgContainer {
+    border: 1px #a7a7a8 solid;
+}

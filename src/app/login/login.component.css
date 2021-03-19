@@ -1,0 +1,34 @@
+.form-signin {
+    width: 100%;
+    margin-top: 5% !important;
+    max-width: 390px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.help-block {
+    color: red;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.spinner-border {
+    position: fixed;
+    left: 46%;
+    top: 40%;
+    opacity: .5 !important;
+}
+
+.mute-all {
+    opacity: 0.4;
+}
+
+.btn {
+    width: 100%;
+}
+
+.alert {
+    font-size: smaller;
+}
